@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<div class="px-4 py-5 my-5 text-center">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <h1 class="list-title"><%=dayMonth%><%= new Date().getFullYear() %></h1>
+    </div>
+    <div class="container-list">
+      <ul class="list-group">
+        <% if (locals.tasks) { %>
+          <% for (let task of tasks) {%>
+            <li class="list-group-item">
+              <input class="form-check-input me-1 checkbox" type="checkbox" value="" id="firstCheckbox">
+              <label class="form-check-label" for="firstCheckbox"><%= task %></label>
+            </li>
+          <% } %>
+        <% } %>
+        <li class="list-group-item">
+          <form class="d-flex" action="/personal" method="POST">
+            <input class="form-control me-2" type="search" placeholder="New task" aria-label="Add Task" name="new-task">
+            <button class="btn btn-primary add" type="submit">Add</button>
+          </form>
+        </li>
+      </ul>
+     </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

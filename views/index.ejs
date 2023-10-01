@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">Done & Done</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Keep track of your daily tasks to stay on top of everything. <br> Separate personal tasks from work assignments. <br>Start right now and add your first task below.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <form class="d-flex" action="/personal" method="POST">
+        <input class="form-control me-2" type="search" placeholder="Add your first Task" aria-label="Add Task" name="new-task">
+        <button class="btn btn-primary add" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
